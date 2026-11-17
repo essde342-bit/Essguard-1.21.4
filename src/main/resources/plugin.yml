@@ -1,0 +1,18 @@
+name: EssGuard
+version: 1.0.0
+main: me.essde.essguard.EssGuard
+api-version: '1.21'
+author: essde342-bit
+description: Conservative server-side anti-cheat for Paper 1.21.4
+commands:
+  essguard:
+    description: EssGuard administration
+    usage: /essguard <reload|alerts|info>
+    aliases: [eg]
+permissions:
+  essguard.admin:
+    default: op
+  essguard.alerts:
+    default: op
+  essguard.bypass:
+    default: false
