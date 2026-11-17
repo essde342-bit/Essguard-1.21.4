@@ -1,26 +1,18 @@
 # EssGuard 1.21.4
 
-A server-side anti-cheat plugin for Paper 1.21.4 (Java 21).
+Server-side anti-cheat for **Paper 1.21.4 / Java 21**.
+
+## Current implementation
+- Movement heuristics: Speed, Fly, Jesus.
+- Combat observation: conservative reach-distance check for direct player hits and player-fired projectiles.
+- Violation levels, decay, staff alerts, `/essguard reload`, `/essguard info <player>`.
+- Alert-only: no automatic kicks or bans.
 
 ## Build
-
 ```bash
 mvn clean package
 ```
+Output: `target/EssGuard-1.21.4.jar`.
 
-The plugin JAR is written to `target/EssGuard-1.21.4.jar`.
-
-## Status
-
-Development build. Checks are conservative and alert-only by default. Do not enable automatic punishments until thresholds have been validated on your server.
-
-## Checks
-
-- Movement: Speed, Fly, Jesus, NoFall (incremental implementation)
-- Combat: reach / hitbox observation
-- Violation levels with decay and staff alerts
-
-## Requirements
-
-- Paper 1.21.4
-- Java 21
+## Important
+This is an early development build, not a production-certified anti-cheat. Movement and reach checks are heuristic and require live testing with normal players, different ping, effects, terrain, vehicles, and server load. Keep thresholds conservative and do not use alerts as proof for punishment.
