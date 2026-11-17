@@ -1,0 +1,37 @@
+general:
+  debug: false
+  alert-prefix: "&8[&bEssGuard&8] "
+  bypass-permission: essguard.bypass
+safety:
+  max-ping-ms-for-movement: 450
+  max-sample-gap-ms: 130
+  velocity-grace-ms: 950
+  damage-grace-ms: 600
+checks:
+  speed:
+    enabled: true
+    window-ticks: 10
+    mild-ratio: 1.22
+    severe-ratio: 1.55
+    window-ratio: 1.24
+    strong-window-ratio: 1.42
+    min-mild-samples: 7
+    min-severe-samples: 4
+    min-severe-step: 0.38
+    base-buffer: 0.065
+  fly:
+    enabled: true
+    hover-dy: 0.018
+    hover-ticks: 18
+    physics-residual: 0.22
+    residual-ticks: 8
+    max-natural-rise-step: 0.52
+    rise-ticks: 4
+  jesus:
+    enabled: true
+    min-horizontal: 0.08
+    max-dy: 0.025
+    surface-ticks: 16
+violations:
+  decay-per-second: 0.10
+  alert-threshold: 2.0
