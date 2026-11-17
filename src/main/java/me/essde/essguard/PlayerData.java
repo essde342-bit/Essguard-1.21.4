@@ -77,10 +77,9 @@ public final class PlayerData {
     }
 
     public void recordSample(double horizontal, double dy, boolean onGround, boolean inWater) {
+        // Keep previous-tick ground/water state intact until the caller finishes its checks.
         lastHorizontal = horizontal;
         lastVerticalVelocity = dy;
-        lastOnGround = onGround;
-        lastInWater = inWater;
     }
 
     public boolean isInitialized() { return initialized; }
