@@ -1,6 +1,7 @@
 package me.essde.essguard;
 
 import me.essde.essguard.checks.MovementCheck;
+import me.essde.essguard.checks.CombatCheck;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -24,6 +25,7 @@ public final class EssGuard extends JavaPlugin implements Listener {
     @Override public void onEnable(){
         saveDefaultConfig(); violations=new ViolationManager(this); movement=new MovementCheck(this);
         Bukkit.getPluginManager().registerEvents(this,this);
+        Bukkit.getPluginManager().registerEvents(new CombatCheck(this),this);
         Bukkit.getScheduler().runTaskTimer(this,()->{
             tick++; long now=System.nanoTime();
             for(Player p:Bukkit.getOnlinePlayers()) movement.sample(p,tick,now,false);
