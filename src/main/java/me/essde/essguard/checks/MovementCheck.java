@@ -288,7 +288,8 @@ public final class MovementCheck {
 
     private boolean isGlobalExempt(Player p) {
         GameMode gm = p.getGameMode();
-        return gm == GameMode.CREATIVE || gm == GameMode.SPECTATOR;
+        return gm == GameMode.CREATIVE || gm == GameMode.SPECTATOR
+                || p.hasPermission(plugin.getConfig().getString("general.bypass-permission", "essguard.bypass"));
     }
 
     private boolean hasCustomScale(Player p) {
